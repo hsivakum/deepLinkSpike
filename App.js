@@ -12,7 +12,7 @@ const AppStackNavigator = createStackNavigator({
     screen: SecondScreen
   }
 })
-const AppContainer = createAppContainer(MainNavigator);
+const AppContainer = createAppContainer(AppStackNavigator);
 const App = () => {
   return <AppContainer/>
 };

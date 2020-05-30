@@ -6,7 +6,6 @@ const SecondScreen = ({ navigation }) => {
   const handleOpenURL=(event)=>{
     console.log(event.url);
     const route = e.url.replace(/.*?:\/\//g, '');
-    // do something with the url, in our case navigate(route)
     console.warn(route)
   }
   useEffect(()=>{

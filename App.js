@@ -13,7 +13,7 @@ const AppStackNavigator = createStackNavigator({
     path: 'firstscreen'
   }, SecondScreen: {
     screen: SecondScreen,
-    path: 'secondscreen'
+    path: 'secondscreen/:color'
   }
 })
 const MainNavigator = createSwitchNavigator({

@@ -1,5 +1,9 @@
 package com.deeplinkspike;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {
@@ -12,4 +16,13 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "deepLinkSpike";
   }
+
+  @Override
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    Intent intent = getIntent();
+    String action = intent.getAction();
+    Uri data = intent.getData();
+}
 }

@@ -6,7 +6,7 @@ const SecondScreen = ({ navigation }) => {
   const handleOpenURL=(event)=>{
     console.log(event.url);
     const route = e.url.replace(/.*?:\/\//g, '');
-    console.warn(route)
+    console.log(route)
   }
   useEffect(()=>{
     Linking.addEventListener('url',handleOpenURL);

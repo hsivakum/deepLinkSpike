@@ -1,6 +1,6 @@
 import PushNotificationIOS from "@react-native-community/push-notification-ios";
 var PushNotification = require("react-native-push-notification");
-import { Platform } from 'react-native'
+import { Platform, Linking } from 'react-native'
 
 PushNotification.configure({
     // (optional) Called when Token is generated (iOS and Android)
@@ -12,6 +12,18 @@ PushNotification.configure({
     largeIcon: 'ic_launcher',
     smallIcon: 'ic_notification',
     onNotification(notification) {
+      const url = `deeplinkspike://home/secondscreen/${notification.color}`
+    Linking.canOpenURL(url).then(async(data)=>{
+      if (data) {
+        // Opening the link with some app, if the URL scheme is "http" the web link should be opened
+        // by some browser in the mobile
+        await Linking.openURL(url);
+      } else {
+        Alert.alert(`Don't know how to open this URL: ${url}`);
+      }
+    })
+
+    
       // eslint-disable-next-line no-console
   
       // process the notification
